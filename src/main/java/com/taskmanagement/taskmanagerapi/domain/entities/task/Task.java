@@ -1,10 +1,10 @@
 package com.taskmanagement.taskmanagerapi.domain.entities.task;
 
-import java.util.UUID;
+
+import com.taskmanagement.taskmanagerapi.domain.dto.task.CreateTaskRequest;
 
 public class Task {
-
-    private UUID id = UUID.randomUUID();
+    private Long id ;
     private String title;
     private String description;
     private String startDate;
@@ -12,51 +12,11 @@ public class Task {
     private TaskStatus status;
 
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(TaskStatus status) {
-        this.status = status;
+    public Task(CreateTaskRequest taskRequest) {
+        this.title = taskRequest.title();
+        this.description = taskRequest.description();
+        this.startDate = taskRequest.startDate();
+        this.endDate = taskRequest.endDate();
+        this.status = taskRequest.status();
     }
 }
