@@ -1,4 +1,4 @@
-package com.taskmanagement.taskmanagerapi.application.task;
+package com.taskmanagement.taskmanagerapi.application.usecases.task;
 
 import com.taskmanagement.taskmanagerapi.domain.entities.task.Task;
 import com.taskmanagement.taskmanagerapi.domain.repositories.TaskRepository;
@@ -13,7 +13,7 @@ public class TaskServiceImpl {
         this.taskRepository = taskRepository;
     }
 
-    public Task save (Task task){
+    public Long save (Task task){
         return taskRepository.save(task);
     }
 

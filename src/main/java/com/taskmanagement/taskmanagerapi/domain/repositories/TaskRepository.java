@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface TaskRepository {
-    Task save(Task task);
+    Long save(Task task);
 
     List<Task>findAll();
     Boolean update(Task Task);

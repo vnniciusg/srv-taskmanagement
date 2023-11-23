@@ -1,6 +1,6 @@
 package com.taskmanagement.taskmanagerapi.adapters.http.tasks;
 
-import com.taskmanagement.taskmanagerapi.application.task.TaskServiceImpl;
+import com.taskmanagement.taskmanagerapi.application.usecases.task.TaskServiceImpl;
 import com.taskmanagement.taskmanagerapi.domain.entities.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +21,8 @@ public class TaskController{
     }
     @PostMapping
     public ResponseEntity createTask(@RequestBody Task task , UriComponentsBuilder UriBuilder){
-        var taskResponse = taskService.save(task);
-        var uri = UriBuilder.path("/api/v1/tasks/{id}").buildAndExpand(taskResponse).toUri();
-        return ResponseEntity.created(uri).body("");
+        var id = taskService.save(task);
+        var uri = UriBuilder.path("/api/v1/tasks/{id}").buildAndExpand(id).toUri();
+        return ResponseEntity.created(uri).build();
     }
 }
