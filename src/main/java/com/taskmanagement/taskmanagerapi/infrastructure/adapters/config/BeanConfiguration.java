@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanConfiguration {
+
     @Bean
     public TaskPersistenceAdapter taskPersistenceAdapter(TaskRepository taskRepository , TaskPersistenceMapper taskPersistenceMapper){
         return new TaskPersistenceAdapter(taskRepository , taskPersistenceMapper);
@@ -18,4 +19,6 @@ public class BeanConfiguration {
     public TaskService taskService(TaskPersistenceAdapter taskPersistenceAdapter ){
         return new TaskService(taskPersistenceAdapter);
     }
+
+
 }

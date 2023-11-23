@@ -7,6 +7,7 @@ import lombok.*;
 @Table(name = "task")
 @Entity(name = "TaskEntity")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")

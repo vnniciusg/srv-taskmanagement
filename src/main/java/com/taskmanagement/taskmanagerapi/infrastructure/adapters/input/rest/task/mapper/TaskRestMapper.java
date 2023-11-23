@@ -4,8 +4,10 @@ import com.taskmanagement.taskmanagerapi.domain.entities.task.Task;
 import com.taskmanagement.taskmanagerapi.infrastructure.adapters.input.rest.task.data.request.TaskCreateRequest;
 import org.mapstruct.Mapper;
 
-@Mapper
+
+@Mapper(componentModel = "spring")
 public interface TaskRestMapper {
+
     Task toTask(TaskCreateRequest taskCreateRequest);
-    TaskCreateRequest toTaskCreateResponse(Task task);
+
 }
