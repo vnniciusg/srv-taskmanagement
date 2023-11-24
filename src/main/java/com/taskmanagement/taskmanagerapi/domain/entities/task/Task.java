@@ -1,6 +1,5 @@
 package com.taskmanagement.taskmanagerapi.domain.entities.task;
 
-import com.taskmanagement.taskmanagerapi.infrastructure.adapters.input.rest.task.data.request.TaskCreateRequest;
 import lombok.*;
 
 @Builder
@@ -15,5 +14,7 @@ public class Task {
     private String startDate;
     private String endDate;
     private TaskStatus status;
+
+
 
 }

@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 public class TaskService implements CreateTaskUseCase {
 
     private final TaskOutputPort taskOutputPort;
-
     @Override
     public Task createTask(Task task) {
         return taskOutputPort.saveTask(task);
